@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 E:\stuff\teme\MIDN_Tema1\MIDN_Tema1\App.xaml
-32047544675
+4837200863
 
-231775724790
+25-1349943955
 15767094614
-Controls\GeneticAlgorithmSettings.xaml;Controls\HillClimberSettings.xaml;MainWindow.xaml;
+Controls\HybridAlgorithmSettings.xaml;Controls\GeneticAlgorithmSettings.xaml;Controls\HillClimberSettings.xaml;MainWindow.xaml;
 
 False
 

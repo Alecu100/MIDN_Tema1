@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="MIDN_Tema1.Controls.HybridAlgorithmSettings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:MIDN_Tema1.Controls"
+             mc:Ignorable="d" Height="244.975" Width="300.339">
+    <Grid>
+        <Label x:Name="lblMutationChance" Content="Mutation Chance:" HorizontalAlignment="Left" VerticalAlignment="Top"
+               Height="30" Margin="25,56,0,0" />
+        <TextBox x:Name="txtMutationChange" Height="30" Margin="134,56,0,0" TextWrapping="Wrap"
+                 Text="{Binding RelativeSource={RelativeSource FindAncestor,  AncestorType={x:Type local:HybridAlgorithmSettings}},Mode=TwoWay,  Path=MutationChance}"
+                 VerticalAlignment="Top" />
+        <Label x:Name="lblCrossoverChance" Content="Crossover Chance:" HorizontalAlignment="Left" Margin="21,107,0,0"
+               VerticalAlignment="Top" Height="30" />
+        <TextBox x:Name="txtCrossoverChance" Height="30" Margin="133,107,0,0" TextWrapping="Wrap"
+                 Text="{Binding RelativeSource={RelativeSource FindAncestor,  AncestorType={x:Type local:HybridAlgorithmSettings}},Mode=TwoWay,  Path=CrossoverChance}"
+                 VerticalAlignment="Top" />
+        <Label x:Name="lblCrossoverCuts" Content="Crossover Cuts:" HorizontalAlignment="Left" Margin="37,163,0,0"
+               VerticalAlignment="Top" Height="30" />
+        <TextBox x:Name="txtCrossoverCuts" Height="30" Margin="134,163,0,0" TextWrapping="Wrap"
+                 Text="{Binding RelativeSource={RelativeSource FindAncestor,  AncestorType={x:Type local:HybridAlgorithmSettings}},Mode=TwoWay,  Path=CrossoverCuts}"
+                 VerticalAlignment="Top" />
+        <Label x:Name="lblPopulationSize" Content="Population Size:" HorizontalAlignment="Left" Margin="34,4,0,0"
+               VerticalAlignment="Top" Height="30" />
+        <TextBox x:Name="txtPopulationSize" Height="30" Margin="134,4,0,0" TextWrapping="Wrap"
+                 VerticalAlignment="Top"
+                 Text="{Binding RelativeSource={RelativeSource FindAncestor,  AncestorType={x:Type local:HybridAlgorithmSettings}},Mode=TwoWay,  Path=PopulationSize}" />
+        <TextBox x:Name="txtImprovementChance" Height="30" Margin="133,209,0,0" TextWrapping="Wrap"
+                 Text="{Binding RelativeSource={RelativeSource FindAncestor,  AncestorType={x:Type local:HybridAlgorithmSettings}},Mode=TwoWay,  Path=ImprovementChance}"
+                 VerticalAlignment="Top" />
+        <Label x:Name="lblImprovementChance" Content="Improvement Chance:" HorizontalAlignment="Left"
+               Margin="2,209,0,0" VerticalAlignment="Top" Height="30" />
+
+
+    </Grid>
+</UserControl>

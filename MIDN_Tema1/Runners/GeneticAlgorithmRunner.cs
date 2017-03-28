@@ -12,20 +12,24 @@ namespace MIDN_Tema1.Runners
     public class GeneticAlgorithmRunner : IRunner
 
     {
-        private readonly List<RunnerResult> _results = new List<RunnerResult>();
-        private GeneticAlgorithmSettings _runnerSettings;
+        protected readonly List<RunnerResult> _results = new List<RunnerResult>();
+        protected double _crossorverChance;
+        protected int _crossoverCuts;
+        protected double _mutationChance;
+        protected int _populationSize;
+        protected UserControl _runnerSettings;
 
         public List<RunnerResult> Results
         {
             get { return _results; }
         }
 
-        public string Name
+        public virtual string Name
         {
             get { return "Genetic algorithm"; }
         }
 
-        public UserControl RunnerSettings
+        public virtual UserControl RunnerSettings
         {
             get
             {
@@ -43,12 +47,14 @@ namespace MIDN_Tema1.Runners
             get { return "Population Number"; }
         }
 
-        public void Run(IFunction function, int numerOfInputs, int numberOfRuns, int numberOfIntervals)
+        public virtual void Run(IFunction function, int numerOfInputs, int numberOfRuns, int numberOfIntervals)
         {
-            var crossoverChance = _runnerSettings.CrossoverChance;
-            var crossoverCuts = _runnerSettings.CrossoverCuts;
-            var mutationChance = _runnerSettings.MutationChance;
-            var populationSize = _runnerSettings.PopulationSize;
+            var geneticAlgorithmSettings = (GeneticAlgorithmSettings) _runnerSettings;
+
+            _crossorverChance = geneticAlgorithmSettings.CrossoverChance;
+            _crossoverCuts = geneticAlgorithmSettings.CrossoverCuts;
+            _mutationChance = geneticAlgorithmSettings.MutationChance;
+            _populationSize = geneticAlgorithmSettings.PopulationSize;
 
             function.NumberOfIntervals = numberOfIntervals;
 
@@ -56,16 +62,13 @@ namespace MIDN_Tema1.Runners
 
             for (var i = 0; i < numberOfRuns; i++)
             {
-                RunInternally(function, numerOfInputs, populationSize, mutationChance,
-                    crossoverChance, crossoverCuts,
-                    i);
+                RunInternally(function, numerOfInputs, i);
             }
         }
 
-        private void RunInternally(IFunction function, int numerOfInputs, int populationSize,
-            double mutationChance, double crossorverChance, int crossoverCuts, int i)
+        protected void RunInternally(IFunction function, int numerOfInputs, int i)
         {
-            var currentPopulation = GenerateInitialPopulation(function, numerOfInputs, populationSize);
+            var currentPopulation = GenerateInitialPopulation(function, numerOfInputs, _populationSize);
 
             AddPopulationToResults(function, currentPopulation, i, 0);
 
@@ -82,7 +85,7 @@ namespace MIDN_Tema1.Runners
                     var newPopulation = currentPopulation.Copy();
 
                     PerformSelection(newPopulation, function);
-                    EvolvePopulation(newPopulation, mutationChance, crossorverChance, crossoverCuts, atemptCount);
+                    EvolvePopulation(function, newPopulation, atemptCount);
 
                     if (IsBetterThanCurrentPopulation(function, currentPopulation, newPopulation))
                     {
@@ -211,12 +214,11 @@ namespace MIDN_Tema1.Runners
             }
         }
 
-        private void EvolvePopulation(BitSolutionsPopulation copy, double mutationChance, double crossoverChance,
-            double crossoverCuts, int atemptCount)
+        protected virtual void EvolvePopulation(IFunction function, BitSolutionsPopulation copy, int atemptCount)
         {
-            MutatePopulation(copy, mutationChance, atemptCount);
+            MutatePopulation(copy, _mutationChance, atemptCount);
 
-            CrossoverPopulation(copy, crossoverChance, crossoverCuts);
+            CrossoverPopulation(copy, _crossorverChance, _crossoverCuts);
         }
 
         private void CrossoverPopulation(BitSolutionsPopulation copy, double crossoverChance, double crossoverCuts)

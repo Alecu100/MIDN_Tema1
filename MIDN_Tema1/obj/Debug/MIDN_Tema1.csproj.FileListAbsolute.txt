@@ -47,3 +47,5 @@ E:\stuff\teme\MIDN_Tema1\MIDN_Tema1\obj\Debug\MIDN_Tema1.Properties.Resources.re
 E:\stuff\teme\MIDN_Tema1\MIDN_Tema1\obj\Debug\MIDN_Tema1.csproj.GenerateResource.Cache
 E:\stuff\teme\MIDN_Tema1\MIDN_Tema1\obj\Debug\Controls\GeneticAlgorithmSettings.g.cs
 E:\stuff\teme\MIDN_Tema1\MIDN_Tema1\obj\Debug\Controls\GeneticAlgorithmSettings.baml
+E:\stuff\teme\MIDN_Tema1\MIDN_Tema1\obj\Debug\Controls\HybridAlgorithmSettings.g.cs
+E:\stuff\teme\MIDN_Tema1\MIDN_Tema1\obj\Debug\Controls\HybridAlgorithmSettings.baml

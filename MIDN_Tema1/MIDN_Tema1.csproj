@@ -57,6 +57,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\HybridAlgorithmSettings.xaml.cs">
+      <DependentUpon>HybridAlgorithmSettings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\GeneticAlgorithmSettings.xaml.cs">
       <DependentUpon>GeneticAlgorithmSettings.xaml</DependentUpon>
     </Compile>
@@ -69,6 +72,7 @@
     <Compile Include="Representations\BitSolutionsPopulation.cs" />
     <Compile Include="Runners\HillClimbingRunner.cs" />
     <Compile Include="Runners\GeneticAlgorithmRunner.cs" />
+    <Compile Include="Runners\HybridAlgorithmRunner.cs" />
     <Compile Include="Runners\IRunner.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Functions\RastriginFunction.cs" />
@@ -76,6 +80,10 @@
     <Compile Include="Runners\RunnerResult.cs" />
     <Compile Include="Functions\SixHumpCamelBack.cs" />
     <Compile Include="RandomUtils.cs" />
+    <Page Include="Controls\HybridAlgorithmSettings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Controls\GeneticAlgorithmSettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

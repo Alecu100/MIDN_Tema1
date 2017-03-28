@@ -35,6 +35,7 @@ namespace MIDN_Tema1
 
             Runners.Add(new HillClimbingRunner());
             Runners.Add(new GeneticAlgorithmRunner());
+            Runners.Add(new HybridAlgorithmRunner());
 
             InitializeComponent();
         }
