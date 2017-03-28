@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="MIDN_Tema1.Controls.HillClimberSettings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:MIDN_Tema1.Controls"
+             mc:Ignorable="d" Height="36.004" Width="281.446">
+    <Grid>
+        <Label x:Name="lblNumerOfAtempts" Content="Numer of Atempts:" HorizontalAlignment="Left"
+               VerticalAlignment="Top" Height="30" />
+        <TextBox x:Name="txtNumberOfAtempts" Height="30" Margin="116,0,0,0" TextWrapping="Wrap"
+                 Text="{Binding RelativeSource={RelativeSource FindAncestor,  AncestorType={x:Type local:HillClimberSettings}},Mode=TwoWay,  Path=NumberOfAtempts}"
+                 VerticalAlignment="Top" />
+
+    </Grid>
+</UserControl>
