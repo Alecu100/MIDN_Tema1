@@ -66,6 +66,7 @@
     <Compile Include="Controls\HillClimberSettings.xaml.cs">
       <DependentUpon>HillClimberSettings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Functions\HomeworkFunction.cs" />
     <Compile Include="Representations\BitStringNumberArray.cs" />
     <Compile Include="Representations\BitStringSolution.cs" />
     <Compile Include="Functions\GriewangkFunction.cs" />

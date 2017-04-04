@@ -4,13 +4,19 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:MIDN_Tema1.Controls"
-             mc:Ignorable="d" Height="36.004" Width="281.446">
+             mc:Ignorable="d" Height="83.004" Width="281.446">
     <Grid>
         <Label x:Name="lblNumerOfAtempts" Content="Numer of Atempts:" HorizontalAlignment="Left"
                VerticalAlignment="Top" Height="30" />
         <TextBox x:Name="txtNumberOfAtempts" Height="30" Margin="116,0,0,0" TextWrapping="Wrap"
                  Text="{Binding RelativeSource={RelativeSource FindAncestor,  AncestorType={x:Type local:HillClimberSettings}},Mode=TwoWay,  Path=NumberOfAtempts}"
                  VerticalAlignment="Top" />
+        <Label x:Name="lblFitMethod" Content="Fit Method:" HorizontalAlignment="Left" Margin="40,41,0,0"
+               VerticalAlignment="Top" Height="30" />
+        <ComboBox x:Name="cmbFitMethod" HorizontalAlignment="Left" Margin="116,41,0,0" VerticalAlignment="Top"
+                  Width="165" Height="30"
+                  ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor,  AncestorType={x:Type local:HillClimberSettings}},  Path=FitMethods}"
+                  SelectionChanged="CmbFitMethod_OnSelectionChanged" DisplayMemberPath="Name" />
 
     </Grid>
 </UserControl>

@@ -28,6 +28,7 @@ namespace MIDN_Tema1
             Functions.Add(new RastriginFunction());
             Functions.Add(new RosenbrockFunction());
             Functions.Add(new SixHumpCamelBack());
+            Functions.Add(new HomeworkFunction());
 
             NumberOfIntervals = (int) Math.Pow(10, 2);
             NumberOfInputs = 5;

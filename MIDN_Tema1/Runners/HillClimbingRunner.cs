@@ -9,7 +9,9 @@ namespace MIDN_Tema1.Runners
 {
     public class HillClimbingRunner : IRunner
     {
+        private string _fitMethod;
         private HillClimberSettings _hillClimberSettings;
+        private int _numberOfAtempts;
         public List<RunnerResult> Results { get; } = new List<RunnerResult>();
 
         public string Name
@@ -40,20 +42,21 @@ namespace MIDN_Tema1.Runners
         {
             Results.Clear();
             function.NumberOfIntervals = numberOfIntervals;
-            var numberOfAtempts = _hillClimberSettings.NumberOfAtempts;
+            _numberOfAtempts = _hillClimberSettings.NumberOfAtempts;
+            _fitMethod = _hillClimberSettings.SelectedFitMethod.Name;
 
             for (var i = 0; i < numberOfRuns; i++)
             {
-                RunInternally(function, numerOfInputs, numberOfAtempts, numberOfIntervals, i);
+                RunInternally(function, numerOfInputs, numberOfIntervals, i);
             }
         }
 
-        private void RunInternally(IFunction function, int numerOfInputs, int numberOfAtempts, int numberOfIntervals,
+        private void RunInternally(IFunction function, int numerOfInputs, int numberOfIntervals,
             int i)
         {
             var bestSolution = function.GetRandomSolution(numerOfInputs);
 
-            for (var j = 0; j < numberOfAtempts; j++)
+            for (var j = 0; j < _numberOfAtempts; j++)
             {
                 var bitStringSolution = function.GetRandomSolution(numerOfInputs);
                 var bestCurrentSolution = bitStringSolution;
@@ -149,11 +152,16 @@ namespace MIDN_Tema1.Runners
 
                     if (function.IsBetterThanCurrentValue(bestValue, currentValue))
                     {
-                        return improvedBitStringSolution;
+                        if (_fitMethod == "First Fit")
+                        {
+                            return improvedBitStringSolution;
+                        }
+
+                        bestSolution = improvedBitStringSolution;
                     }
                 }
 
-            return bitStringSolution.Copy();
+            return bestSolution.Copy();
         }
     }
 }
