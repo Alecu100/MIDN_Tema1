@@ -29,7 +29,7 @@ namespace MIDN_Tema1.Functions
         {
             var bitStringSolution = new BitStringSolution();
 
-            var randomBitStringNumber = GetRandomBitStringNumber(0, 32);
+            var randomBitStringNumber = GetRandomBitStringNumber(0, 31);
 
             bitStringSolution.Add(randomBitStringNumber);
 

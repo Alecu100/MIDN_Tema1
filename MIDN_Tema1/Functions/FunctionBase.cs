@@ -28,7 +28,6 @@ namespace MIDN_Tema1.Functions
         protected BitStringSolution GetRandomSolution(int numberOfInputs, double lowerLimit, double upperLimit)
         {
             var bitStringSolution = new BitStringSolution();
-            var ticks = (int) (DateTime.Now.Ticks%100000);
 
             for (var i = 0; i < numberOfInputs; i++)
             {
