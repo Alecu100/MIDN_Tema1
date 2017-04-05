@@ -19,6 +19,8 @@ namespace MIDN_Tema1.Controls
             NumberOfAtempts = 30;
             FitMethods.Add(new FitMethod {Name = "Best Fit"});
             FitMethods.Add(new FitMethod {Name = "First Fit"});
+
+            cmbFitMethod.SelectedIndex = 0;
         }
 
         public FitMethod SelectedFitMethod { get; set; }

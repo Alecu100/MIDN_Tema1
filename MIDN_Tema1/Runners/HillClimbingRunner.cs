@@ -59,6 +59,9 @@ namespace MIDN_Tema1.Runners
             for (var j = 0; j < _numberOfAtempts; j++)
             {
                 var bitStringSolution = function.GetRandomSolution(numerOfInputs);
+
+                AddResult(function, i, -2, bitStringSolution);
+
                 var bestCurrentSolution = bitStringSolution;
 
                 var isLocal = false;

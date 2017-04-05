@@ -24,6 +24,8 @@ namespace MIDN_Tema1
 
         public MainWindow()
         {
+            InitializeComponent();
+
             Functions.Add(new GriewangkFunction());
             Functions.Add(new RastriginFunction());
             Functions.Add(new RosenbrockFunction());
@@ -38,7 +40,8 @@ namespace MIDN_Tema1
             Runners.Add(new GeneticAlgorithmRunner());
             Runners.Add(new HybridAlgorithmRunner());
 
-            InitializeComponent();
+            cmbFunction.SelectedIndex = 0;
+            cmbRunner.SelectedIndex = 0;
         }
 
         public ObservableCollection<IFunction> Functions { get; } = new ObservableCollection<IFunction>();
