@@ -1,4 +1,5 @@
-﻿using MIDN_Tema1.Representations;
+﻿using System.Collections.Generic;
+using MIDN_Tema1.Representations;
 
 namespace MIDN_Tema1.Functions
 {
@@ -8,9 +9,9 @@ namespace MIDN_Tema1.Functions
 
         string Name { get; }
 
-        double CalculateValue(BitStringSolution solution);
+        double CalculateValue(List<double> solution);
 
-        double CalculateMaximizationValue(BitStringSolution solution);
+        double CalculateMaximizationValue(List<double> solution);
 
         BitStringSolution GetRandomSolution(int numberOfInputs);
 

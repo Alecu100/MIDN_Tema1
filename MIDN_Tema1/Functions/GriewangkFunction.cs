@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using MIDN_Tema1.Representations;
 
 namespace MIDN_Tema1.Functions
@@ -10,21 +11,22 @@ namespace MIDN_Tema1.Functions
             get { return "Griewangk"; }
         }
 
-        public override double CalculateValue(BitStringSolution numbers)
+        public override double CalculateValue(List<double> numbers)
         {
             double sum = 0;
             double prod = 1;
 
             for (var i = 0; i < numbers.Count; i++)
             {
-                var numberDouble = numbers[i].ToDouble();
-                sum += numberDouble*numberDouble/4000d;
+                var numberDouble = numbers[i];
+                sum += numberDouble * numberDouble / 4000d;
             }
 
             for (var i = 0; i < numbers.Count; i++)
             {
-                var numberDouble = numbers[i].ToDouble();
-                prod *= Math.Cos(numberDouble/Math.Sqrt(i + 1));
+                var numberDouble = numbers[i];
+
+                prod *= Math.Cos(numberDouble / Math.Sqrt(i + 1));
             }
 
             sum -= prod;
@@ -33,7 +35,7 @@ namespace MIDN_Tema1.Functions
             return sum;
         }
 
-        public override double CalculateMaximizationValue(BitStringSolution solution)
+        public override double CalculateMaximizationValue(List<double> solution)
         {
             return 300 - CalculateValue(solution);
         }

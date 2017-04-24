@@ -70,8 +70,8 @@ namespace MIDN_Tema1.Runners
                 {
                     bitStringSolution = Improve(function, bitStringSolution);
 
-                    var bestValue = function.CalculateValue(bestCurrentSolution);
-                    var currentValue = function.CalculateValue(bitStringSolution);
+                    var bestValue = function.CalculateValue(bestCurrentSolution.ToDouble());
+                    var currentValue = function.CalculateValue(bitStringSolution.ToDouble());
 
                     if (function.IsBetterThanCurrentValue(bestValue, currentValue))
                     {
@@ -85,8 +85,8 @@ namespace MIDN_Tema1.Runners
                     }
                 }
 
-                var bestValue2 = function.CalculateValue(bestSolution);
-                var currentValue2 = function.CalculateValue(bestCurrentSolution);
+                var bestValue2 = function.CalculateValue(bestSolution.ToDouble());
+                var currentValue2 = function.CalculateValue(bestCurrentSolution.ToDouble());
 
                 if (function.IsBetterThanCurrentValue(bestValue2, currentValue2))
                 {
@@ -104,7 +104,7 @@ namespace MIDN_Tema1.Runners
             runnerResult.Number = index;
             runnerResult.OptionalField = atempt;
             runnerResult.Function = function.Name;
-            runnerResult.Value = function.CalculateValue(solution).ToString();
+            runnerResult.Value = function.CalculateValue(solution.ToDouble()).ToString();
 
             var results = new List<double>();
 
@@ -150,8 +150,8 @@ namespace MIDN_Tema1.Runners
                         improvedBitStringSolution[i][j] = 1;
                     }
 
-                    var bestValue = function.CalculateValue(bestSolution);
-                    var currentValue = function.CalculateValue(improvedBitStringSolution);
+                    var bestValue = function.CalculateValue(bestSolution.ToDouble());
+                    var currentValue = function.CalculateValue(improvedBitStringSolution.ToDouble());
 
                     if (function.IsBetterThanCurrentValue(bestValue, currentValue))
                     {

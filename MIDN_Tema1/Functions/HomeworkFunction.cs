@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using MIDN_Tema1.Representations;
 
 namespace MIDN_Tema1.Functions
@@ -10,15 +11,15 @@ namespace MIDN_Tema1.Functions
             get { return "Homework Function"; }
         }
 
-        public override double CalculateValue(BitStringSolution solution)
+        public override double CalculateValue(List<double> solution)
         {
             double sum = 0;
 
-            sum += Math.Pow(solution[0].ToDouble(), 3);
+            sum += Math.Pow(solution[0], 3);
 
-            sum += -60d*Math.Pow(solution[0].ToDouble(), 2);
+            sum += -60d * Math.Pow(solution[0], 2);
 
-            sum += 900*solution[0].ToDouble();
+            sum += 900 * solution[0];
 
             sum += 100;
 
@@ -36,7 +37,7 @@ namespace MIDN_Tema1.Functions
             return bitStringSolution;
         }
 
-        public override double CalculateMaximizationValue(BitStringSolution solution)
+        public override double CalculateMaximizationValue(List<double> solution)
         {
             return 100000 - CalculateValue(solution);
         }

@@ -111,7 +111,7 @@ namespace MIDN_Tema1.Runners
                 runnerResult.Runner = Name;
                 runnerResult.Function = function.Name;
                 runnerResult.Number = runNumber;
-                runnerResult.Value = function.CalculateValue(currentPopulation[i]).ToString();
+                runnerResult.Value = function.CalculateValue(currentPopulation[i].ToDouble()).ToString();
                 runnerResult.OptionalField = populationNumber;
                 var results = new List<double>();
 
@@ -142,11 +142,11 @@ namespace MIDN_Tema1.Runners
         private bool IsBetterThanCurrentPopulation(IFunction function, BitSolutionsPopulation currentPopulation,
             BitSolutionsPopulation newPopulation)
         {
-            var maxFromCurrentPopulation = function.CalculateMaximizationValue(currentPopulation[0]);
+            var maxFromCurrentPopulation = function.CalculateMaximizationValue(currentPopulation[0].ToDouble());
 
             for (var i = 1; i < currentPopulation.Count; i++)
             {
-                var maxFromCurrentSolution = function.CalculateMaximizationValue(currentPopulation[i]);
+                var maxFromCurrentSolution = function.CalculateMaximizationValue(currentPopulation[i].ToDouble());
 
                 if (maxFromCurrentSolution > maxFromCurrentPopulation)
                 {
@@ -154,11 +154,11 @@ namespace MIDN_Tema1.Runners
                 }
             }
 
-            var maxFromNewPopulation = function.CalculateMaximizationValue(newPopulation[0]);
+            var maxFromNewPopulation = function.CalculateMaximizationValue(newPopulation[0].ToDouble());
 
             for (var i = 1; i < newPopulation.Count; i++)
             {
-                var maxFromNewSolution = function.CalculateMaximizationValue(newPopulation[i]);
+                var maxFromNewSolution = function.CalculateMaximizationValue(newPopulation[i].ToDouble());
 
                 if (maxFromNewSolution > maxFromNewPopulation)
                 {
@@ -180,7 +180,7 @@ namespace MIDN_Tema1.Runners
 
             for (var i = 0; i < copy.Count; i++)
             {
-                totalFitness += function.CalculateMaximizationValue(copy[i]);
+                totalFitness += function.CalculateMaximizationValue(copy[i].ToDouble());
             }
 
             var intervals = new List<Tuple<double, double, int>>();
@@ -190,7 +190,7 @@ namespace MIDN_Tema1.Runners
             {
                 lowerLimit = currentPoint;
 
-                currentPoint += function.CalculateMaximizationValue(copy[i])/totalFitness;
+                currentPoint += function.CalculateMaximizationValue(copy[i].ToDouble())/totalFitness;
 
                 var upperLimit = currentPoint;
 

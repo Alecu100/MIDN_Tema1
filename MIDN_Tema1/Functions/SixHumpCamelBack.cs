@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using MIDN_Tema1.Representations;
 
 namespace MIDN_Tema1.Functions
@@ -10,23 +11,23 @@ namespace MIDN_Tema1.Functions
             get { return "Six-hump camel back"; }
         }
 
-        public override double CalculateValue(BitStringSolution solution)
+        public override double CalculateValue(List<double> solution)
         {
             double sum = 0;
-            var first = solution[0].ToDouble();
-            var second = solution[1].ToDouble();
+            var first = solution[0];
+            var second = solution[1];
 
 
-            sum += (4 - 2.1d*Math.Pow(first, 2) + Math.Pow(first, 4d)/3d)*Math.Pow(first, 2);
+            sum += (4 - 2.1d * Math.Pow(first, 2) + Math.Pow(first, 4d) / 3d) * Math.Pow(first, 2);
 
-            sum += first*second;
+            sum += first * second;
 
-            sum += (-4d + 4d*Math.Pow(second, 2))*Math.Pow(second, 2);
+            sum += (-4d + 4d * Math.Pow(second, 2)) * Math.Pow(second, 2);
 
             return sum;
         }
 
-        public override double CalculateMaximizationValue(BitStringSolution solution)
+        public override double CalculateMaximizationValue(List<double> solution)
         {
             return 300 - CalculateValue(solution);
         }

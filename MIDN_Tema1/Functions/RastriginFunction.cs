@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using MIDN_Tema1.Representations;
 
 namespace MIDN_Tema1.Functions
@@ -10,21 +11,21 @@ namespace MIDN_Tema1.Functions
             get { return "Rastrigin"; }
         }
 
-        public override double CalculateValue(BitStringSolution numbers)
+        public override double CalculateValue(List<double> numbers)
         {
-            double sum = numbers.Count*10;
+            double sum = numbers.Count * 10;
 
             for (var i = 0; i < numbers.Count; i++)
             {
-                var numberDouble = numbers[i].ToDouble();
+                var numberDouble = numbers[i];
 
-                sum += numberDouble*numberDouble - 10*Math.Cos(2*Math.PI*numberDouble);
+                sum += numberDouble * numberDouble - 10 * Math.Cos(2 * Math.PI * numberDouble);
             }
 
             return sum;
         }
 
-        public override double CalculateMaximizationValue(BitStringSolution solution)
+        public override double CalculateMaximizationValue(List<double> solution)
         {
             return 300 - CalculateValue(solution);
         }

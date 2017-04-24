@@ -97,8 +97,8 @@ namespace MIDN_Tema1.Runners
                         improvedBitStringSolution[i][j] = 1;
                     }
 
-                    var bestValue = function.CalculateValue(bestSolution);
-                    var currentValue = function.CalculateValue(improvedBitStringSolution);
+                    var bestValue = function.CalculateValue(bestSolution.ToDouble());
+                    var currentValue = function.CalculateValue(improvedBitStringSolution.ToDouble());
 
                     if (function.IsBetterThanCurrentValue(bestValue, currentValue))
                     {

@@ -66,11 +66,17 @@
     <Compile Include="Controls\HillClimberSettings.xaml.cs">
       <DependentUpon>HillClimberSettings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ParticleSwarmSettings.xaml.cs">
+      <DependentUpon>ParticleSwarmSettings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Functions\HomeworkFunction.cs" />
     <Compile Include="Representations\BitStringNumberArray.cs" />
     <Compile Include="Representations\BitStringSolution.cs" />
     <Compile Include="Functions\GriewangkFunction.cs" />
     <Compile Include="Representations\BitSolutionsPopulation.cs" />
+    <Compile Include="Representations\Particle.cs" />
+    <Compile Include="Representations\ParticleDimension.cs" />
+    <Compile Include="Representations\ParticleSwarm.cs" />
     <Compile Include="Runners\HillClimbingRunner.cs" />
     <Compile Include="Runners\GeneticAlgorithmRunner.cs" />
     <Compile Include="Runners\HybridAlgorithmRunner.cs" />
@@ -78,6 +84,7 @@
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Functions\RastriginFunction.cs" />
     <Compile Include="Functions\RosenbrockFunction.cs" />
+    <Compile Include="Runners\ParticleSwarmRunner.cs" />
     <Compile Include="Runners\RunnerResult.cs" />
     <Compile Include="Functions\SixHumpCamelBack.cs" />
     <Compile Include="RandomUtils.cs" />
@@ -90,6 +97,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\HillClimberSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ParticleSwarmSettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

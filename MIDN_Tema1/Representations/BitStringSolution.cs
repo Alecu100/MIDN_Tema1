@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
 
 namespace MIDN_Tema1.Representations
 {
@@ -12,16 +10,14 @@ namespace MIDN_Tema1.Representations
         {
             var copy = new BitStringSolution();
 
-            for (int i = 0; i < Count; i++)
+            for (var i = 0; i < Count; i++)
             {
                 var numberCopy = new BitStringNumber();
                 var currentNumber = this[i];
 
 
-                for (int j = 0; j < currentNumber.Count; j++)
-                {
+                for (var j = 0; j < currentNumber.Count; j++)
                     numberCopy.Add(currentNumber[j]);
-                }
 
                 numberCopy.LowerLimit = currentNumber.LowerLimit;
                 numberCopy.UpperLimit = currentNumber.UpperLimit;
@@ -31,6 +27,16 @@ namespace MIDN_Tema1.Representations
             }
 
             return copy;
+        }
+
+        public List<double> ToDouble()
+        {
+            var doubles = new List<double>();
+
+            for (var i = 0; i < Count; i++)
+                doubles.Add(this[i].ToDouble());
+
+            return doubles;
         }
     }
 }

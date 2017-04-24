@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using MIDN_Tema1.Representations;
 
 namespace MIDN_Tema1.Functions
@@ -10,11 +11,11 @@ namespace MIDN_Tema1.Functions
             get { return (int) Math.Ceiling(Math.Log(NumberOfIntervals, 2)); }
         }
 
-        public abstract double CalculateMaximizationValue(BitStringSolution solution);
+        public abstract double CalculateMaximizationValue(List<double> solution);
 
         public int NumberOfIntervals { get; set; }
 
-        public abstract double CalculateValue(BitStringSolution solution);
+        public abstract double CalculateValue(List<double> solution);
 
 
         public abstract BitStringSolution GetRandomSolution(int numberOfInputs);
