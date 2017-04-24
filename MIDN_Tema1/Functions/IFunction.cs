@@ -15,6 +15,8 @@ namespace MIDN_Tema1.Functions
 
         BitStringSolution GetRandomSolution(int numberOfInputs);
 
+        Particle GetRandomParticle(int numberOfInputs);
+
         bool IsBetterThanCurrentValue(double currentValue, double newValue);
     }
 }

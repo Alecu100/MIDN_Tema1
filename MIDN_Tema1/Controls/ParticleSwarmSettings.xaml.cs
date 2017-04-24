@@ -10,6 +10,7 @@ namespace MIDN_Tema1.Controls
     /// </summary>
     public partial class ParticleSwarmSettings : UserControl, INotifyPropertyChanged
     {
+        private int _iterations;
         private int _swarmSize;
         private double _w1Factor;
         private double _w2Factor;
@@ -18,6 +19,16 @@ namespace MIDN_Tema1.Controls
         public ParticleSwarmSettings()
         {
             InitializeComponent();
+        }
+
+        public int Iterations
+        {
+            get { return _iterations; }
+            set
+            {
+                _iterations = value;
+                OnPropertyChanged();
+            }
         }
 
         public int SwarmSize

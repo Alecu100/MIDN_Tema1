@@ -19,6 +19,9 @@ namespace MIDN_Tema1.Functions
 
 
         public abstract BitStringSolution GetRandomSolution(int numberOfInputs);
+
+        public abstract Particle GetRandomParticle(int numberOfInputs);
+
         public abstract string Name { get; }
 
         public bool IsBetterThanCurrentValue(double currentValue, double newValue)

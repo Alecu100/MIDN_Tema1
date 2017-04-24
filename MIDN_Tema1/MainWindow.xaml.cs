@@ -39,6 +39,7 @@ namespace MIDN_Tema1
             Runners.Add(new HillClimbingRunner());
             Runners.Add(new GeneticAlgorithmRunner());
             Runners.Add(new HybridAlgorithmRunner());
+            Runners.Add(new ParticleSwarmRunner());
 
             cmbFunction.SelectedIndex = 0;
             cmbRunner.SelectedIndex = 0;
@@ -137,7 +138,7 @@ namespace MIDN_Tema1
             if (e.AddedItems.Count > 0)
             {
                 var runner = (IRunner) e.AddedItems[0];
-                grpRunnerSettings.Content = runner.RunnerSettings;
+                scrlViewerRunnerSettings.Content = runner.RunnerSettings;
                 colOptionalField.Header = runner.OptionalFieldName;
             }
         }

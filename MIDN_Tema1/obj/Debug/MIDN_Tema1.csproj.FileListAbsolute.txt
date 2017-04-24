@@ -70,3 +70,5 @@ F:\stuff\teme\MIDN_Tema1\MIDN_Tema1\obj\Debug\MainWindow.baml
 F:\stuff\teme\MIDN_Tema1\MIDN_Tema1\obj\Debug\MIDN_Tema1.g.resources
 F:\stuff\teme\MIDN_Tema1\MIDN_Tema1\obj\Debug\MIDN_Tema1.Properties.Resources.resources
 F:\stuff\teme\MIDN_Tema1\MIDN_Tema1\obj\Debug\MIDN_Tema1.csproj.GenerateResource.Cache
+E:\stuff\teme\MIDN_Tema1\MIDN_Tema1\obj\Debug\Controls\ParticleSwarmSettings.g.cs
+E:\stuff\teme\MIDN_Tema1\MIDN_Tema1\obj\Debug\Controls\ParticleSwarmSettings.baml

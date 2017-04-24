@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-F:\stuff\teme\MIDN_Tema1\MIDN_Tema1\obj\Debug\
+E:\stuff\teme\MIDN_Tema1\MIDN_Tema1\obj\Debug\
 MIDN_Tema1
 none
 false
 DEBUG;TRACE
-F:\stuff\teme\MIDN_Tema1\MIDN_Tema1\App.xaml
+E:\stuff\teme\MIDN_Tema1\MIDN_Tema1\App.xaml
 5-749525544
 
 35-684580345
 15767094614
 Controls\HybridAlgorithmSettings.xaml;Controls\GeneticAlgorithmSettings.xaml;Controls\HillClimberSettings.xaml;Controls\ParticleSwarmSettings.xaml;MainWindow.xaml;
 
-False
+True
 
