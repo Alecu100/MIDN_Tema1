@@ -11,15 +11,20 @@ namespace MIDN_Tema1.Functions
             get { return "Rastrigin"; }
         }
 
+        public override Particle GetRandomParticle(int numberOfInputs)
+        {
+            return GetRandomParticle(numberOfInputs, -5.12d, 5.12d);
+        }
+
         public override double CalculateValue(List<double> numbers)
         {
-            double sum = numbers.Count * 10;
+            double sum = numbers.Count*10;
 
             for (var i = 0; i < numbers.Count; i++)
             {
                 var numberDouble = numbers[i];
 
-                sum += numberDouble * numberDouble - 10 * Math.Cos(2 * Math.PI * numberDouble);
+                sum += numberDouble*numberDouble - 10*Math.Cos(2*Math.PI*numberDouble);
             }
 
             return sum;

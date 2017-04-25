@@ -11,6 +11,11 @@ namespace MIDN_Tema1.Functions
             get { return "Griewangk"; }
         }
 
+        public override Particle GetRandomParticle(int numberOfInputs)
+        {
+            return GetRandomParticle(numberOfInputs, -600d, 600d);
+        }
+
         public override double CalculateValue(List<double> numbers)
         {
             double sum = 0;
@@ -19,14 +24,14 @@ namespace MIDN_Tema1.Functions
             for (var i = 0; i < numbers.Count; i++)
             {
                 var numberDouble = numbers[i];
-                sum += numberDouble * numberDouble / 4000d;
+                sum += numberDouble*numberDouble/4000d;
             }
 
             for (var i = 0; i < numbers.Count; i++)
             {
                 var numberDouble = numbers[i];
 
-                prod *= Math.Cos(numberDouble / Math.Sqrt(i + 1));
+                prod *= Math.Cos(numberDouble/Math.Sqrt(i + 1));
             }
 
             sum -= prod;

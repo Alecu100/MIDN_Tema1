@@ -43,6 +43,39 @@ namespace MIDN_Tema1.Functions
             return bitStringSolution;
         }
 
+        protected ParticleDimension GetRandomParticleDimension(double lowerLimit,
+            double upperLimit)
+        {
+            var next4Digits = RandomUtils.GetNext4Digits();
+
+            var random = new Random(next4Digits);
+
+            var lowerLimitDecimal = (decimal) lowerLimit;
+            var upperLimitDecimal = (decimal) upperLimit;
+            var ratio = (decimal) random.NextDouble();
+
+            var particleDimension = new ParticleDimension();
+
+            particleDimension.Value = (double) ((lowerLimitDecimal*ratio + upperLimitDecimal*(1 - ratio))/2);
+            particleDimension.LowerLimit = lowerLimit;
+            particleDimension.UpperLimit = upperLimit;
+
+            return particleDimension;
+        }
+
+        protected Particle GetRandomParticle(int numberOfInputs, double lowerLimit,
+            double upperLimit)
+        {
+            var particle = new Particle();
+
+            for (var i = 0; i < numberOfInputs; i++)
+            {
+                particle.Add(GetRandomParticleDimension(lowerLimit, upperLimit));
+            }
+
+            return particle;
+        }
+
         protected BitStringNumber GetRandomBitStringNumber(double lowerLimit, double upperLimit)
         {
             var bitStringNumber = new BitStringNumber();

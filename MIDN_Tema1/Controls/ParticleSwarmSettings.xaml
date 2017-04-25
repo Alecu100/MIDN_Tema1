@@ -4,33 +4,39 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:MIDN_Tema1.Controls"
-             mc:Ignorable="d" Height="235" Width="247">
+             mc:Ignorable="d" Height="291" Width="286">
     <Grid>
-        <Label x:Name="lblW1Factor" Content="W1 Factor:" HorizontalAlignment="Left" Margin="16,57,0,0"
+        <Label x:Name="lblW1Factor" Content="W1 Factor:" HorizontalAlignment="Left" Margin="66,57,0,0"
                VerticalAlignment="Top" Height="30" />
-        <TextBox x:Name="txtW1Factor" HorizontalAlignment="Left" Height="30" Margin="87,57,0,0" TextWrapping="Wrap"
+        <TextBox x:Name="txtW1Factor" HorizontalAlignment="Left" Height="30" Margin="137,57,0,0" TextWrapping="Wrap"
                  Text="{Binding RelativeSource={RelativeSource FindAncestor,  AncestorType={x:Type local:ParticleSwarmSettings}},Mode=TwoWay,  Path=W1Factor}"
-                 VerticalAlignment="Top" Width="120" />
-        <Label x:Name="lblW2Factor" Content="W2 Factor:" HorizontalAlignment="Left" Margin="16,103,0,0"
+                 VerticalAlignment="Top" Width="138" />
+        <Label x:Name="lblW2Factor" Content="W2 Factor:" HorizontalAlignment="Left" Margin="66,103,0,0"
                VerticalAlignment="Top" Height="30" />
-        <TextBox x:Name="txtW2Factor" HorizontalAlignment="Left" Height="30" Margin="87,103,0,0" TextWrapping="Wrap"
+        <TextBox x:Name="txtW2Factor" HorizontalAlignment="Left" Height="30" Margin="137,103,0,0" TextWrapping="Wrap"
                  Text="{Binding RelativeSource={RelativeSource FindAncestor,  AncestorType={x:Type local:ParticleSwarmSettings}},Mode=TwoWay,  Path=W2Factor}"
-                 VerticalAlignment="Top" Width="120" />
-        <Label x:Name="lblW3Factor" Content="W3 Factor:" HorizontalAlignment="Left" Margin="16,149,0,0"
+                 VerticalAlignment="Top" Width="138" />
+        <Label x:Name="lblW3Factor" Content="W3 Factor:" HorizontalAlignment="Left" Margin="66,149,0,0"
                VerticalAlignment="Top" Height="30" />
-        <TextBox x:Name="txtW3Factor" HorizontalAlignment="Left" Height="30" Margin="87,149,0,0" TextWrapping="Wrap"
+        <TextBox x:Name="txtW3Factor" HorizontalAlignment="Left" Height="30" Margin="137,149,0,0" TextWrapping="Wrap"
                  Text="{Binding RelativeSource={RelativeSource FindAncestor,  AncestorType={x:Type local:ParticleSwarmSettings}},Mode=TwoWay,  Path=W3Factor}"
-                 VerticalAlignment="Top" Width="120" />
-        <Label x:Name="lblSwarmSize" Content="Swarm Size:" HorizontalAlignment="Left" Margin="10,10,0,0"
+                 VerticalAlignment="Top" Width="138" />
+        <Label x:Name="lblSwarmSize" Content="Swarm Size:" HorizontalAlignment="Left" Margin="60,10,0,0"
                VerticalAlignment="Top" Height="30" />
-        <TextBox x:Name="txtSwarmSize" HorizontalAlignment="Left" Height="30" Margin="87,10,0,0" TextWrapping="Wrap"
+        <TextBox x:Name="txtSwarmSize" HorizontalAlignment="Left" Height="30" Margin="137,10,0,0" TextWrapping="Wrap"
                  Text="{Binding RelativeSource={RelativeSource FindAncestor,  AncestorType={x:Type local:ParticleSwarmSettings}},Mode=TwoWay,  Path=SwarmSize}"
-                 VerticalAlignment="Top" Width="120" />
-        <Label x:Name="lblIterations" Content="Iterations:" HorizontalAlignment="Left" Margin="20,195,0,0"
+                 VerticalAlignment="Top" Width="138" />
+        <Label x:Name="lblIterations" Content="Iterations:" HorizontalAlignment="Left" Margin="70,195,0,0"
                VerticalAlignment="Top" Height="30" />
-        <TextBox x:Name="txtIterations" HorizontalAlignment="Left" Height="30" Margin="87,195,0,0" TextWrapping="Wrap"
+        <TextBox x:Name="txtIterations" HorizontalAlignment="Left" Height="30" Margin="137,195,0,0" TextWrapping="Wrap"
                  Text="{Binding RelativeSource={RelativeSource FindAncestor,  AncestorType={x:Type local:ParticleSwarmSettings}},Mode=TwoWay,  Path=Iterations}"
-                 VerticalAlignment="Top" Width="120" />
+                 VerticalAlignment="Top" Width="138" />
+        <Label x:Name="lblVelocityClampRatio" Content="Velocity Clamp Ratio:" HorizontalAlignment="Left"
+               Margin="10,244,0,0" VerticalAlignment="Top" Height="30" />
+        <TextBox x:Name="txtVelocityClampRatio" HorizontalAlignment="Left" Height="30" Margin="137,244,0,0"
+                 TextWrapping="Wrap"
+                 Text="{Binding RelativeSource={RelativeSource FindAncestor,  AncestorType={x:Type local:ParticleSwarmSettings}},Mode=TwoWay,  Path=VelocityClampRatio}"
+                 VerticalAlignment="Top" Width="138" />
 
     </Grid>
 </UserControl>

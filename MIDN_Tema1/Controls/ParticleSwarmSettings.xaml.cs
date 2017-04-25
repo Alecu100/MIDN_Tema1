@@ -12,6 +12,7 @@ namespace MIDN_Tema1.Controls
     {
         private int _iterations;
         private int _swarmSize;
+        private double _velocityClampRatio;
         private double _w1Factor;
         private double _w2Factor;
         private double _w3Factor;
@@ -19,6 +20,23 @@ namespace MIDN_Tema1.Controls
         public ParticleSwarmSettings()
         {
             InitializeComponent();
+
+            VelocityClampRatio = 0.1d;
+            SwarmSize = 30;
+            W1Factor = 0.5;
+            W2Factor = 0.25;
+            W3Factor = 0.25;
+            Iterations = 50;
+        }
+
+        public double VelocityClampRatio
+        {
+            get { return _velocityClampRatio; }
+            set
+            {
+                _velocityClampRatio = value;
+                OnPropertyChanged();
+            }
         }
 
         public int Iterations

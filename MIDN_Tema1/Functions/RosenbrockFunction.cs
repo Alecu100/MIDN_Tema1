@@ -11,6 +11,11 @@ namespace MIDN_Tema1.Functions
             get { return "Rosenbrock"; }
         }
 
+        public override Particle GetRandomParticle(int numberOfInputs)
+        {
+            return GetRandomParticle(numberOfInputs, -2.048d, 2.048d);
+        }
+
         public override double CalculateValue(List<double> numbers)
         {
             double sum = 0;
@@ -20,7 +25,7 @@ namespace MIDN_Tema1.Functions
                 var currentNumberDouble = numbers[i];
                 var nextNumberDouble = numbers[i + 1];
 
-                sum += 100 * Math.Pow(nextNumberDouble - currentNumberDouble * currentNumberDouble, 2) +
+                sum += 100*Math.Pow(nextNumberDouble - currentNumberDouble*currentNumberDouble, 2) +
                        Math.Pow(1 - currentNumberDouble, 2);
             }
 

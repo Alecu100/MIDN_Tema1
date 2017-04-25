@@ -11,15 +11,20 @@ namespace MIDN_Tema1.Functions
             get { return "Homework Function"; }
         }
 
+        public override Particle GetRandomParticle(int numberOfInputs)
+        {
+            return GetRandomParticle(numberOfInputs, 0, 31);
+        }
+
         public override double CalculateValue(List<double> solution)
         {
             double sum = 0;
 
             sum += Math.Pow(solution[0], 3);
 
-            sum += -60d * Math.Pow(solution[0], 2);
+            sum += -60d*Math.Pow(solution[0], 2);
 
-            sum += 900 * solution[0];
+            sum += 900*solution[0];
 
             sum += 100;
 

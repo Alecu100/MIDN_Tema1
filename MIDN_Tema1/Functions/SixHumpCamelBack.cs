@@ -11,6 +11,16 @@ namespace MIDN_Tema1.Functions
             get { return "Six-hump camel back"; }
         }
 
+        public override Particle GetRandomParticle(int numberOfInputs)
+        {
+            var particle = new Particle();
+
+            particle.Add(GetRandomParticleDimension(-3d, 3d));
+            particle.Add(GetRandomParticleDimension(-2d, 2d));
+
+            return particle;
+        }
+
         public override double CalculateValue(List<double> solution)
         {
             double sum = 0;
@@ -18,11 +28,11 @@ namespace MIDN_Tema1.Functions
             var second = solution[1];
 
 
-            sum += (4 - 2.1d * Math.Pow(first, 2) + Math.Pow(first, 4d) / 3d) * Math.Pow(first, 2);
+            sum += (4 - 2.1d*Math.Pow(first, 2) + Math.Pow(first, 4d)/3d)*Math.Pow(first, 2);
 
-            sum += first * second;
+            sum += first*second;
 
-            sum += (-4d + 4d * Math.Pow(second, 2)) * Math.Pow(second, 2);
+            sum += (-4d + 4d*Math.Pow(second, 2))*Math.Pow(second, 2);
 
             return sum;
         }
