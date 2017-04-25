@@ -34,15 +34,15 @@ namespace MIDN_Tema1
 
             NumberOfIntervals = (int) Math.Pow(10, 2);
             NumberOfInputs = 5;
-            NumberOfRuns = 30;
+            NumberOfRuns = 1;
 
             Runners.Add(new HillClimbingRunner());
             Runners.Add(new GeneticAlgorithmRunner());
             Runners.Add(new HybridAlgorithmRunner());
             Runners.Add(new ParticleSwarmRunner());
 
-            cmbFunction.SelectedIndex = 0;
-            cmbRunner.SelectedIndex = 0;
+            cmbFunction.SelectedItem = Functions[0];
+            cmbRunner.SelectedItem = Runners[Runners.Count - 1];
         }
 
         public ObservableCollection<IFunction> Functions { get; } = new ObservableCollection<IFunction>();

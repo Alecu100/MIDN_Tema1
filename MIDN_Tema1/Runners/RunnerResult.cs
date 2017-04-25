@@ -7,7 +7,7 @@
 
         public int Number { get; set; }
 
-        public int OptionalField { get; set; }
+        public string OptionalField { get; set; }
 
         public string Function { get; set; }
 

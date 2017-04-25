@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using System.Windows.Controls;
 using MIDN_Tema1.Controls;
@@ -102,9 +103,9 @@ namespace MIDN_Tema1.Runners
             var runnerResult = new RunnerResult();
 
             runnerResult.Number = index;
-            runnerResult.OptionalField = atempt;
+            runnerResult.OptionalField = atempt.ToString();
             runnerResult.Function = function.Name;
-            runnerResult.Value = function.CalculateValue(solution.ToDouble()).ToString();
+            runnerResult.Value = function.CalculateValue(solution.ToDouble()).ToString(CultureInfo.InvariantCulture);
 
             var results = new List<double>();
 

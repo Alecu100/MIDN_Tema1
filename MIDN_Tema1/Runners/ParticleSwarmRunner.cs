@@ -61,7 +61,7 @@ namespace MIDN_Tema1.Runners
             }
         }
 
-        private void AddParticleToResults(IFunction function, Particle particle, int iteration, int runNumber)
+        private void AddParticleToResults(IFunction function, Particle particle, string iteration, int runNumber)
         {
             var runnerResult = new RunnerResult();
 
@@ -112,7 +112,7 @@ namespace MIDN_Tema1.Runners
 
             for (var i = 0; i < particleSwarm.Count; i++)
             {
-                AddParticleToResults(function, particleSwarm[i], -1, runNumber);
+                AddParticleToResults(function, particleSwarm[i], "initial iteration", runNumber);
             }
 
             for (var i = 1; i < _swarmSize; i++)
@@ -148,9 +148,11 @@ namespace MIDN_Tema1.Runners
                         particleSwarm[i].Maximum = particleSwarm[i].Copy();
                     }
 
-                    AddParticleToResults(function, particleSwarm[i], iteration, runNumber);
+                    AddParticleToResults(function, particleSwarm[i], iteration.ToString(), runNumber);
                 }
             }
+
+            AddParticleToResults(function, particleSwarm.GlobalMaximum, "global maximum", runNumber);
         }
 
         private void UpdatePosition(Particle particle)

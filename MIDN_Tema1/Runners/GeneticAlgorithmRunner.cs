@@ -70,7 +70,7 @@ namespace MIDN_Tema1.Runners
         {
             var currentPopulation = GenerateInitialPopulation(function, numerOfInputs, _populationSize);
 
-            AddPopulationToResults(function, currentPopulation, i, 0);
+            AddPopulationToResults(function, currentPopulation, i, "initial population");
 
             var shouldContinueEvolution = true;
             var populationNumber = 0;
@@ -92,17 +92,19 @@ namespace MIDN_Tema1.Runners
                         currentPopulation = newPopulation;
                         shouldContinueEvolution = true;
                         populationNumber++;
-                        AddPopulationToResults(function, currentPopulation, i, populationNumber);
+                        AddPopulationToResults(function, currentPopulation, i, populationNumber.ToString());
                         break;
                     }
 
                     atemptCount++;
                 }
             }
+
+            AddPopulationToResults(function, currentPopulation, i, "final population");
         }
 
         private void AddPopulationToResults(IFunction function, BitSolutionsPopulation currentPopulation, int runNumber,
-            int populationNumber)
+            string populationNumber)
         {
             for (var i = 0; i < currentPopulation.Count; i++)
             {
